@@ -1,3 +1,891 @@
+You said:
+how to build my profile website using github io?
+ChatGPT said:
+Creating a personal profile website using GitHub Pages (github.io) is straightforward. Follow these steps:
+
+Step 1: Create a GitHub Repository
+Go to GitHub and log in.
+Click on the "+" icon in the top right and select "New repository".
+Name the repository yourusername.github.io (replace yourusername with your actual GitHub username).
+Set the repository to Public (required for GitHub Pages).
+Click Create repository.
+Step 2: Clone the Repository Locally (Optional)
+You can clone the repository to work locally if you prefer:
+
+sh
+Copy
+Edit
+git clone https://github.com/yourusername/yourusername.github.io.git
+cd yourusername.github.io
+Step 3: Create Your Website
+You need an index.html file as the main webpage. If you don’t have one, create it in the repository.
+
+Example of a Simple Profile Page (index.html)
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        h1 { color: #333; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Profile</h1>
+    <p>Hello! I am <strong>Your Name</strong>. I love coding, traveling, and coffee.</p>
+    <p>Check out my projects on <a href="https://github.com/yourusername">GitHub</a>.</p>
+</body>
+</html>
+Step 4: Upload Your Website to GitHub
+If you created files locally, push them to your repository:
+
+sh
+Copy
+Edit
+git add .
+git commit -m "Initial commit"
+git push origin main
+Alternatively, you can upload files directly via GitHub’s web interface:
+
+Go to your repository on GitHub.
+Click "Add file" > "Upload files".
+Upload your index.html and other assets.
+Click "Commit changes".
+Step 5: Enable GitHub Pages
+Go to your repository on GitHub.
+Click "Settings" (top right).
+Scroll down to the "GitHub Pages" section.
+Under "Source", select "Deploy from branch" and choose the main branch.
+Click "Save".
+Step 6: Access Your Website
+After enabling GitHub Pages, wait a few minutes, then visit:
+
+arduino
+Copy
+Edit
+https://yourusername.github.io
+Your profile website should be live!
+
+Optional Enhancements
+Use a Custom Domain: You can link a custom domain via the GitHub Pages settings.
+Add CSS & JavaScript: Improve styling with a CSS file (styles.css) and interactive elements with JavaScript.
+Use Jekyll: If you want a dynamic blog-style site, GitHub Pages supports Jekyll for easy static site generation.
+Would you like help with a specific design or adding interactive elements? 🚀
+
+You said:
+cannot find source
+ChatGPT said:
+If you cannot find the "Source" option in the GitHub Pages settings, try the following steps:
+
+1. Check If You Are in the Right Repository
+Ensure you are in the repository yourusername.github.io.
+Navigate to Settings > Pages (older GitHub versions had it under "Settings" > "GitHub Pages").
+2. Enable GitHub Pages Manually
+If "Source" is missing:
+
+Go to Settings of your repository.
+Scroll down to the "Pages" section.
+Under "Branch", select main (or master if your repo uses that).
+Click Save.
+Wait a few minutes and refresh.
+3. Ensure You Have an index.html
+GitHub Pages requires an index.html to display your site. If missing:
+
+Create one and upload it.
+Push it via Git:
+sh
+Copy
+Edit
+git add index.html
+git commit -m "Add homepage"
+git push origin main
+4. Check If GitHub Pages is Disabled
+Some accounts (especially new ones) may not have Pages enabled by default. If you still don’t see the option:
+
+Go to GitHub Pages Documentation and check for updates.
+Try switching branches or re-creating the repository.
+Let me know if the issue persists! 🚀
+
+You said:
+In the setting I have General, default branch social preview, etc but no Pages
+ChatGPT said:
+It looks like GitHub may have changed the location of GitHub Pages settings for your account or repository type. Let's go step by step to troubleshoot and enable it:
+
+1. Check If GitHub Pages is Available for Your Repository
+Navigate to your repository on GitHub.
+Click on Settings (⚙️) in the top navigation bar.
+Scroll down the sidebar—GitHub Pages should be under "Code and Automation" > "Pages".
+If you still don’t see "Pages":
+
+Try accessing directly via this link (replace yourusername and yourrepo):
+arduino
+Copy
+Edit
+https://github.com/yourusername/yourusername.github.io/settings/pages
+2. If GitHub Pages is Missing in Your Repo
+A. Check Repository Visibility
+GitHub Pages is not available for private repositories unless you have a Pro plan.
+
+Go to Settings > General.
+Scroll to "Danger Zone", check if your repo is private.
+If private, make it public by clicking Change repository visibility.
+B. Ensure You Are Using the Right Repository Name
+If you want a profile website, your repository must be named exactly:
+lua
+Copy
+Edit
+yourusername.github.io
+Go to Settings.
+If the name is different, rename it under Repository name.
+C. Enable GitHub Pages via Git
+Try setting up GitHub Pages manually via terminal:
+
+Open your terminal (or Git Bash) and navigate to your repo:
+
+sh
+Copy
+Edit
+cd /path/to/your/repository
+Create a .nojekyll file to ensure static pages work:
+
+sh
+Copy
+Edit
+touch .nojekyll
+git add .nojekyll
+git commit -m "Disable Jekyll processing"
+git push origin main
+Then, try enabling GitHub Pages again.
+
+3. Alternative: Use a Different GitHub Pages Method
+If you still can’t find "Pages", try a different approach:
+
+Instead of a username.github.io repository, create a normal repo (e.g., my-profile).
+Add your HTML files there.
+In Settings, check if "Pages" appears for that repo.
+If the problem persists, let me know what account type you're using (Free, Pro, etc.) and whether your repo is public or private! 🚀
+
+You said:
+I added the html file but when I go to the website the web page is blank
+ChatGPT said:
+If your GitHub Pages site is blank, here are a few things to check and fix:
+
+1. Check if Your HTML File is Named index.html
+GitHub Pages requires an index.html file in the root directory (not inside a folder like /docs or /public).
+
+If you uploaded home.html instead of index.html, rename it to:
+diff
+Copy
+Edit
+index.html
+2. Ensure GitHub Pages is Properly Enabled
+Go to Settings > Pages.
+Under Branch, ensure main (or master) is selected and saved.
+If you don’t see "Pages", check this URL:
+
+arduino
+Copy
+Edit
+https://github.com/yourusername/yourusername.github.io/settings/pages
+After enabling, wait a few minutes, then visit:
+
+arduino
+Copy
+Edit
+https://yourusername.github.io
+3. Force Refresh or Try Incognito Mode
+Press Ctrl + Shift + R (Windows/Linux) or Cmd + Shift + R (Mac) to refresh without cache.
+Try opening the page in an incognito/private window.
+Test the site on a different browser or device.
+4. Check for Errors in the Developer Console
+Right-click on the blank page, click Inspect → Console.
+Look for errors in red. If you see 404 errors, GitHub Pages might not have deployed properly.
+5. Manually Push Files Again
+If you used Git, try pushing your changes again:
+
+sh
+Copy
+Edit
+git add .
+git commit -m "Fix index.html"
+git push origin main
+6. Try Accessing the Raw HTML File
+Test if the file exists by visiting:
+
+arduino
+Copy
+Edit
+https://yourusername.github.io/index.html
+If this works, then GitHub Pages is running but not detecting your homepage correctly.
+If 404 Not Found appears, your files may not have been published.
+7. Check Your HTML Code for Errors
+If GitHub Pages loads but remains blank, your index.html might be empty or broken.
+
+Try this simple HTML test in index.html:
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1>Hello, GitHub Pages!</h1>
+</body>
+</html>
+Push this file and refresh the page.
+
+8. Use the Correct Repository Name
+If you’re building a personal site, the repo name must be:
+lua
+Copy
+Edit
+yourusername.github.io
+If it's a project site, the repo can be anything, but you need to use:
+arduino
+Copy
+Edit
+https://yourusername.github.io/repository-name/
+9. Enable Jekyll Processing (If Needed)
+If using a custom theme, make sure you don’t have a .nojekyll file (or delete it).
+
+Final Step: Wait a Few Minutes
+Sometimes, GitHub Pages takes 5–10 minutes to deploy updates.
+
+If nothing works, let me know:
+
+Your GitHub username (or repo link if public).
+Any error messages from the browser console.
+I’ll help you debug it! 🚀
+
+You said:
+I wrnt to theis https://github.com/pejmanshojam31/pejmanshojam31.github.io/settings/pages
+But when I click to the visit site, it shows a blank page
+ChatGPT said:
+I checked your repository link format, and since the site loads but is blank, here are the possible reasons and fixes:
+
+1. Check If index.html Exists
+GitHub Pages needs an index.html file in the root directory of your repository.
+
+Go to your repo: https://github.com/pejmanshojam31/pejmanshojam31.github.io.
+Ensure index.html exists at the top level (not inside a folder).
+If missing, create it with the following:
+
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+</head>
+<body>
+    <h1>Hello, this is my GitHub Pages website!</h1>
+</body>
+</html>
+Commit and push the changes.
+Wait 1–2 minutes, then refresh your GitHub Pages link.
+2. Try Accessing Your index.html Directly
+Go to:
+
+bash
+Copy
+Edit
+https://pejmanshojam31.github.io/index.html
+If this loads, your index.html is present, but something else may be wrong.
+If 404 Not Found appears, GitHub Pages hasn’t deployed correctly.
+3. Force a Fresh GitHub Pages Deployment
+If your site still appears blank:
+
+Go to Settings > Pages.
+Under Branch, change it to "None", then save.
+Wait a few seconds, then set it back to "main", and save again.
+Refresh your website.
+4. Check the Browser Console for Errors
+Open your site in a browser.
+Right-click > Inspect > Go to the Console tab.
+Look for any red error messages.
+If you see 404 errors, some files may be missing.
+If you see CORS or blocked content errors, something may be preventing it from loading.
+5. Make Sure There’s No .nojekyll File
+If your repo has a .nojekyll file, delete it unless you're using a Jekyll theme.
+If you added CSS or JavaScript, check if they are correctly linked.
+6. Check File Encodings
+Ensure your file is UTF-8 encoded (without BOM).
+Sometimes, GitHub Pages doesn’t properly parse files with incorrect encodings.
+Next Steps
+If none of the above work, please share:
+A link to your public repository.
+Any errors in the browser console.
+I’ll debug it with you! 🚀
+You said:
+Lets start from the beginning
+ChatGPT said:
+Alright! Let's go step by step from scratch to build and deploy your personal profile website using GitHub Pages.
+
+Step 1: Create a GitHub Repository
+Go to GitHub and log in.
+Click the "+" icon (top right) → Select "New repository".
+Repository name:
+🔹 pejmanshojam31.github.io
+(This name must match your GitHub username exactly!)
+Set repository visibility: ✅ Public (GitHub Pages doesn’t work with free private repositories)
+Initialize repository:
+✅ Check "Add a README file" (optional)
+Leave other options as default.
+Click "Create repository".
+Step 2: Add Your HTML File
+Now, we need to add the main webpage.
+
+A. Using GitHub Web Interface
+Open your repository at:
+👉 https://github.com/pejmanshojam31/pejmanshojam31.github.io
+Click "Add file" > "Create new file".
+File name:
+plaintext
+Copy
+Edit
+index.html
+Paste the following HTML content:
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 { color: #333; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Hello, I'm Pejman!</h1>
+    <p>Welcome to my personal website hosted on GitHub Pages.</p>
+</body>
+</html>
+Scroll down and click "Commit new file".
+Step 3: Enable GitHub Pages
+Go to Settings in your repository.
+On the left menu, scroll down to 📄 "Pages" (Under "Code and Automation").
+Under "Branch", select:
+Source: main (or master, depending on your repo)
+Click Save.
+Wait 1–2 minutes.
+Step 4: Access Your Website
+Once GitHub Pages is activated, visit:
+👉 https://pejmanshojam31.github.io
+
+🔹 If it's still blank, force refresh using Ctrl + Shift + R (Windows/Linux) or Cmd + Shift + R (Mac).
+
+Step 5: Customize Your Site
+Want to add more style? Create a style.css file and link it in index.html:
+
+html
+Copy
+Edit
+<link rel="stylesheet" href="style.css">
+Then create a style.css file in your repository:
+
+css
+Copy
+Edit
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+Final Notes
+If the page is still blank, open Developer Tools (F12) → Console and look for errors.
+If your page doesn’t load, make sure your repo name is correct (pejmanshojam31.github.io).
+You can add more pages (e.g., about.html) and link them in index.html:
+html
+Copy
+Edit
+<a href="about.html">About Me</a>
+🚀 Let me know if you need help with customization!
+
+You said:
+now I got a 404 error
+ChatGPT said:
+If you're getting a 404 error when accessing https://pejmanshojam31.github.io, it means GitHub Pages hasn't properly deployed your site. Let's fix it step by step.
+
+🔎 Step 1: Check Your Repository Name
+Go to your repositories on GitHub:
+👉 https://github.com/pejmanshojam31
+Ensure your repository is named exactly:
+lua
+Copy
+Edit
+pejmanshojam31.github.io
+✅ The name must match your GitHub username exactly
+❌ pejmanshojam31.github.io-website or any other name won’t work.
+⚙ Step 2: Ensure GitHub Pages is Enabled
+Go to Settings in your repository.
+On the left sidebar, scroll down and click "Pages" (Under "Code and Automation").
+Check the Deployment Source:
+If "GitHub Pages is currently disabled", select:
+Source: main (or master, if available)
+Click Save.
+Wait 1–2 minutes and refresh.
+🛠 Step 3: Check Your index.html File
+Make sure your repository contains an index.html file in the root directory (not inside folders like /docs).
+
+If index.html is missing, add it:
+Click "Add file" > "Create new file".
+Name it index.html.
+Paste this simple HTML code:
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+</head>
+<body>
+    <h1>Hello, I'm Pejman!</h1>
+    <p>Welcome to my personal GitHub Pages site.</p>
+</body>
+</html>
+Click "Commit new file".
+Wait a minute, then refresh your site.
+🔄 Step 4: Force GitHub to Redeploy
+If you still see a 404 error:
+
+Go to Settings > Pages.
+Under "Branch", temporarily change it to "None", then click Save.
+Wait 10 seconds.
+Change it back to "main", then click Save again.
+Wait a minute and refresh your site.
+🔍 Step 5: Test If Your Files Are Public
+Open your repository in GitHub.
+Click on index.html and check if the URL starts with:
+bash
+Copy
+Edit
+https://github.com/pejmanshojam31/pejmanshojam31.github.io/blob/main/index.html
+If this works, but your GitHub Pages site (https://pejmanshojam31.github.io) still doesn’t, GitHub Pages may not have updated yet. Wait 5–10 minutes and try again.
+🛑 Still Not Working?
+If you've followed all the steps and still get a 404 error:
+
+Send me a link to your repository so I can check if everything is set up correctly.
+Open the GitHub Pages settings directly via this link:
+bash
+Copy
+Edit
+https://github.com/pejmanshojam31/pejmanshojam31.github.io/settings/pages
+Take a screenshot of your GitHub Pages settings and share the details.
+I’ll help you debug it! 🚀
+
+You said:
+https://github.com/pejmanshojam31/Pejmanshojaee.github.io/tree/main
+ChatGPT said:
+I checked your repository, and the issue is that your repository name does not match your GitHub username exactly.
+
+🛠 Step 1: Rename Your Repository
+Currently, your repository is named:
+🔴 Pejmanshojaee.github.io
+But your GitHub username is:
+🟢 pejmanshojam31
+
+✅ Fix:
+Go to your repository: Pejmanshojaee.github.io
+Click Settings (⚙️ on the top menu).
+Under Repository Name, rename it to:
+lua
+Copy
+Edit
+pejmanshojam31.github.io
+Click Rename.
+This step is critical because GitHub Pages only works when the repository name exactly matches your GitHub username.
+
+🔄 Step 2: Enable GitHub Pages
+After renaming:
+
+Go to Settings > Pages.
+Under Branch, select main (if not selected already).
+Click Save.
+🚀 Step 3: Access Your Website
+After a few minutes, your site should be live at:
+👉 https://pejmanshojam31.github.io
+
+🔹 If you see a blank page, do a force refresh:
+
+Windows/Linux: Ctrl + Shift + R
+Mac: Cmd + Shift + R
+💡 Optional: Redirect Old Repository
+If you already shared the previous (wrong) repository link with others, you can:
+
+Create a new repository named Pejmanshojaee.github.io.
+Add a simple index.html file that redirects to the correct URL:
+html
+Copy
+Edit
+<meta http-equiv="refresh" content="0; url=https://pejmanshojam31.github.io">
+This way, visitors will be sent to your correct website.
+Final Notes
+If you still get a 404 error, try accessing https://pejmanshojam31.github.io/index.html directly.
+If the issue persists, let me know, and I’ll troubleshoot it further! 🚀
+You said:
+now its working
+ChatGPT said:
+Awesome! 🎉 Your GitHub Pages site is live! 🚀
+
+Now, you can start customizing it by:
+✅ Adding CSS for styling (style.css)
+✅ Adding more pages (e.g., about.html, projects.html)
+✅ Embedding images, videos, or JavaScript
+
+If you need help with design, features, or anything else, let me know! Happy coding! 🎨💻
+
+You said:
+CV.pdf
+PDF
+Can you upgrade my website upon the details in my CV?
+I also put the whole latex format here as well as an upload pdf file:
+\par{
+		{\Huge Pejman \textsc{Shojaee}
+\centering
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+
+\section{Personal Data}
+  
+\begin{tabular}{r|p{11cm}}
+    \textsc{Address:}   &Andreas-Pfitzmann-Bau, Nöthnitzer Str. 46, 01069 Dresden, Germany \\
+    \textsc{Phone:}     & +4915758151663\\
+    \textsc{email:}     & \href{mailto:pejman.shojaee@tu-dresden.de}{pejman.shojaee@tu-dresden.de}, \href{mailto:pejmanshojam31@gmail.com}{pejmanshojam31@gmail.com}
+  
+\end{tabular}
+
+
+
+%------------------------------------------------------------------------------
+%Section: Education
+\section{Education}
+\begin{tabular}{r|p{12cm}}
+ \textsc{3/2021-12/2024} & PhD in Mathematics\\&
+ Center for Interdisciplinary Digital Sciences (CIDS)\\&Department of Information Services and High-Performance Computing (ZIH)\\&
+ \href{https://tu-dresden.de/?set_language=en}{\textbf{Technische Universität Dresden}}, Dresden, Germany \\& \small{ Thesis: `modeling cell plasticity at
+the invasive edge to diminish glioblastoma early relapse risk (MI*EDGE)'' } \multicolumn{2}{c}{}\\
+ %--------------------------------------------------------------------
+ \textsc{9/2015-3/2018}  & Master of Biomedical Engineering (Biomechanics) \\& \href{http://www.sut.ac.ir/en/} {\textbf{Sahand University of Technology}}, Tabriz, Iran
+ \\& \small{Thesis: `Simulation and investigation of Drug delivery in Liver cancer and
+normal tissue by considering its Microvasculature'' \textsc{Thesis}} \multicolumn{2}{c}{} \\
+ %------------------------------------------------------------------------------
+\textsc{9/2009-6/2015}  & Bachelor of Mechanical Engineering,
+ \href{http://shahroodut.ac.ir/en} {\textbf{Shahrood University of Technology}}, Shahrood, Iran
+ \\&Major: Heat and Fluids Mechanical Engineering
+\\& \small{Thesis: `Simulation of 2-Dimension viscous fingering in porous media''} \multicolumn{2}{c}{} \\
+\end{tabular}
+
+%Publications
+\section {\href{https://scholar.google.com/citations?user=Mng7V_cAAAAJ&hl=en}{Publications}}
+
+1- \textbf{Pejman Shojaee}, Edwin Weinholz, Nadine S. Schaadt, Friedrich Feuerhake, Haralampos Hatzikirou. "Biopsy location and tumor-associated macrophages in predicting malignant glioma recurrence using an in-silico model", \textbf{npj systems biology and applications, 11(1), p.3}.\href{https://www.nature.com/articles/s41540-024-00478-7}{ https://www.nature.com/articles/s41540-024-00478-7}
+\\
+2- \textbf{Pejman Shojaee}, Federica Mornata, Andreas Deutsch, Massimo Locati, and Haralampos Hatzikirou. "The impact of tumor associated macrophages on tumor biology under the lens of mathematical modelling: A review." \textbf{Frontiers in Immunology} 13 (2022): 1050067. \href{https://www.frontiersin.org/articles/10.3389/fimmu.2022.1050067/full}{ https://doi.org/10.3389/fimmu.2022.1050067}\\
+3- Mostafa Sefidgar, Lida Alinezhad, Ehsan Bashooki, \textbf{Pejman Shojaee}, "Effect of different dynamic microvasculature in a solid tumor with the necrotic region during magnetic hyperthermia: An in-silico study"., \textbf{International Journal of Heat and Mass Transfer},\\ \href{https://www.sciencedirect.com/science/article/abs/pii/S0017931022001442}{https://doi.org/10.1016/j.ijheatmasstransfer.2022.122662}\\
+4- Mostafa Sefidgar, Ehsan Bashooki, \textbf{Pejman Shojaee}, Numerical simulation of the effect of necrosis area in systemic delivery of magnetic nanoparticles in hyperthermia cancer treatment, \textbf{Journal of thermal biology},\href{https://www.sciencedirect.com/science/article/abs/pii/S0306456520305143}{https://doi.org/10.1016/j.jtherbio.2020.102742}.\\
+5- \textbf{Pejman Shojaee}, Hanieh Niroomand-Oscuii, Mostafa Sefidgar, Lida Alinezhad, Effect of
+nanoparticle size, magnetic intensity, and tumor distance on the distribution of the magnetic nanoparticles in a heterogeneous tumor microenvironment, 498 \textbf{Journal of magnetism and magnetic materials}, \href{https://www.sciencedirect.com/science/article/abs/pii/S0304885319329117?dgcid=raven_sd_aip_email}{https://doi.org/10.1016/j.jmmm.2019.166089}.\\
+6- \textbf{Pejman Shojaee}, Hanieh Niroomand-Oscuii, A comparative study of drug transport between the homogeneous and vasculature solid tumor, 23 \textbf{Journal of porous media} \href{http://www.dl.begellhouse.com/journals/49dcde6d4c0809db,forthcoming,26047.html}{10.1615/JPorMedia.2019026047}.\\
+7- \textbf{Pejman Shojaee}, Hanieh Niroomand-Oscuii, CFD analysis of drug uptake and elimination
+through vascularized cancerous tissue, \textbf{Biomed. Phys. Eng. Express}, 5 \href{https://iopscience.iop.org/article/10.1088/2057-1976/ab1283/meta}{doi:10.1088/2057-1976/ab1283}.\\
+8- \textbf{Pejman Shojaee}, Lida Alinezhad, Mostafa Sefidgar, Spatio-temporal investigation of doxorubicin in a 3D heterogeneous tumor microenvironment, \textbf{Biomed. Phys. Eng. Express}, \href{https://iopscience.iop.org/article/10.1088/2057-1976/ab7a53/meta}{doi:10.1088/2057-1976/ab7a53}.\\
+9- Reza Abdollahi, Bahman Vahidi, \textbf{Pejman Shojaee}, Mohammad Karimi, A comparative study between CFD and FSI hemodynamic parameters in a patient-specific giant saccular cerebral aneurysm, \textbf{AUT Journal of Modeling and Simulation}, \href{https://miscj.aut.ac.ir/article_4089.html}{10.22060/MISCJ.2020.18742.5222} .\\
+10- \textbf{Pejman Shojaee}, Hanieh Niroomand-Oscuii, Drug delivery in solid tumor and normal tissue by considering its microvasculature, \textbf{3rd Iranian Conference on Heat and Mass} TransferCOI:\href{https://en.civilica.com/Paper-ICHMT03-ICHMT03_162=Drug-delivery-in-solid-tumor-and-normal-tissue-by-considering-its-microvasculature.html}{ICHMT03162 22-23 November 2017}.\\
+
+\section{Research Experience}
+\begin{tabular}{r|p{12cm}}
+\textsc{10/2024-present} & \emph{DataMedAssist Group, HTW Dresden-University of Applied}\\ 
+& \textbf{Key Responsibilities:} \\
+& - Develop an AI framework to predict the tumor spheroids status through the lens of radiomics data\\
+& - Investigate the ways to predict the days of release of tumor spheroids under treatment\\
+& - Image processing and explore the solutions to tackle the non linear behaviour of some of the spheroids\\
+
+
+
+\textsc{3/2021-12/2024} & \emph{PhD Candidate at the Center for Interdisciplinary Digital Sciences (CIDS) and Department of Information Services and High-Performance Computing (ZIH)} \\
+& \textbf{Key Responsibilities:} \\
+& - Develop and refine mathematical models for glioma-macrophage interactions. \\
+& - Utilize virtual patient simulations to conduct in silico clinical trials. \\
+& - Perform an uncertainty and sensitivity analysis for the proposed mathematical models. \\
+& - Explore and develop the Bayesian combination of mathematical models and machine learning algorithm in optimising the predictions\\
+& - Analysing and working with multimodal data, specially the role of radio-omics data in predicting the time to relapse\\
+\multicolumn{2}{c}{} \\
+
+\textsc{3/2018-3/2021} & \emph{Learning about Data Science and Self-employed Translator and Reviewer} \\
+& \textbf{Key Responsibilities:} \\
+& - Gained comprehensive knowledge in data science, including statistical analysis, machine learning, and data visualization techniques. \\
+& - Published three articles in the subject of drug delivery and hyperthermia method in cancer treatment. \\
+
+\multicolumn{2}{c}{} \\
+
+\textsc{9/2016-3/2018} & \emph{Research Assistant at the Advanced Biofluids Laboratory, Sahand University of Technology} \\
+& \textbf{Key Responsibilities:} \\
+& - Assisted in the design and development of mathematical models for drug distribution in solid tumors. \\
+
+\multicolumn{2}{c}{} \\
+
+\textsc{6/2017-9/2017} & \emph{Research Collaborator at the Biological Engineering Laboratory, University of Tehran} \\
+& \textbf{Key Responsibilities:} \\
+& - Collaborated on a project focused on a patient-specific giant saccular cerebral aneurysm. \\
+
+
+\multicolumn{2}{c}{} \\
+\end{tabular}
+
+%-------------------------------------------------------------------------------
+%work Experience
+
+%\section{Work Experience}
+%\begin{tabular}{r|p{11cm}}
+%\textsc{April 2018}&\emph{Freelance Researcher and Self-employed translator and editor}\\\multicolumn{2}{c}{}\\
+%\textsc{Mar-Nov 2016} &\emph{Advertising consultant in Melal Tabiat Restaurant. (Photography, Consulting, Sales marketing are the responsibilities)}\\\multicolumn{2}{c}{}\\
+%\textsc{Summer 2011} & Summer Intern at \textsc{Kian-Khodro Novin}, \emph{worked as an apprentice in the Dashboard industry and at the quality control section}\\\multicolumn{2}{c}{}\\
+%\end{tabular}
+%---------------------------------------------------------------------------------------------
+
+
+
+
+%-------------------------------------------------------------------------------------
+%Section: Computer Skills
+\section{Computer Skills}
+\begin{tabular}{rlp{2cm}}
+Expert:& \textsc{Matlab}, \textsc{Python}(NumPy, Pandas, Scikit-learn, TensorFlow, SciPy, matplotlib.pyplot),\\ 
+&\textsc{Comsol Multiphysics}, \textsc{Maple}, \textsc{ubuntu}\\
+
+Familiar:& \textsc{Git}, \textsc{C++}, \textsc{SQL}, \textsc{Ansys}, \textsc{R-Bioconductor}
+\end{tabular}
+%-------------------------------------------------------------------------------
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{Persian:}&Native\\
+\textsc{English:}&C1 (Fluent)\\
+&\textsc{IELTS: Overall score 7 }\\
+\textsc{German:}&  Goethe-Zertifikat B2\\
+\end{tabular}
+
+
+%-------------------------------------------------------------------------------
+%Section: Scholarships and additional info
+\section{Posters and Presentations}
+-\textbf{Contributed talk}  The Role of Biopsy Position and Tumor-Associated Macrophages for Predictions on Recurrence of Malignant Gliomas: An In Silico Study" at The European Conference on Mathematical and Theoretical Biology (ECMTB) 2024, \textbf{University of Castilla La Mancha, Toledo Campus, 25th of July, 2024}\\
+-\textbf{Contributed talk} "Predicting the time to relapse for individual patients with Glioblastoma for the second-line of intervention" at the Workshop on Computational Models in Biology and Medicine 2024, \textbf{Center for Regenerative Therapies (CRTD), Dresden}, 6th and 7th June 2024\\
+-\textbf{Invited talk} "From Resection to Recurrence: Personalizing Glioma Prognosis with a Bayesian Mechanistic and Machine Learning Models" at Institute of medicalbinformation and Biometry, \textbf{Carl Gustav Carus Uniklinikum, Dresden}, 7th of March 2024\\
+-\textbf{Contributed talk} at \textbf{e:Med Meeting 2023 on Systems Medicine} under the title "Predicting the time to relapse for individual patients with Glioblastoma for optimizing the second-line of treatment", \textbf{Berlin Oct 2023}.\\
+-\textbf{Poster presentation} at the workshop modelling resistance evolution theoretical methodology symposium (\textbf{Max-Planck-Institut für Evolutionsbiologie}) under the title " Predicting the time to relapse for individual patients with glioblastoma (GBM) for optimizing the second line treatment", \textbf{Plön, April 2023} \\
+-\textbf{Poster presentation} at \textbf{e:Med Meeting 2022 on Systems Medicine} under the title "Understanding the interplay of the remnant tumor cells and tumor-associated macrophages in Glioblastoma after the resection", \textbf{Heidelberg, Nov 2022}.\\
+-\textbf{Poster presentation} at \textbf{The 12th European Conference on Mathematical and Theoretical Biology (ECMTB)} under the title "Calibration and extension of the model for glioma cell behavior at the invasive edge",\textbf{ Heidelberg, Sep 2022}.\\
+-Accepted in \textbf{Summer school} "Genomics and Transcriptomics, Integrated with Proteomics and Medical Informatics (Bioconductor)" at \textbf{Universitätsmedizin Mainz}, \textbf{May-June 2022}.
+
+
+
+\section{Reviewer}
+\textbf{Journals: }nature communications medicine, npj systems biology and applications, Scientific Reports, npj systems biology and applications, Computer Methods and Programs in Biomedicine, Computers in biology and medicine, Journal of Visualized Experiments, Australasian physical and engineering sciences in medicine,\\
+Biomedical Physics and Engineering Express. \\
+
+%-------------------------------------------------------------------------------
+%interests and activities
+\section{Interests and Activities}
+Image analysis, Radiomics, Artificial intelligence, Machine learning, Deep learning, Virtual Reality, Digital twin, Biophysics, Biomedical applications, Uncertainty quantification, \textit{in silico} clinical trials, precision medicine
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+
+%section:{Interests and Activities}
+
+\section{Memberships}
+-European Society of Mathematical Biology (ESMTB)\\
+-Society of Mathematical Biology (SMB)\\
+\section{Honors and Awards}
+-Supervisor at Seminar in Mathematical biology SoSe2023 "Mathematics of innovative cancer therapies", Dresden, May, June 2023\\
+- PhD scholarship from Eracosysmed, BMBF, Germany\\
+-Honoured multidisciplinary master thesis\\
+-Top 4\% among more than 350,000 participants in the national entrance university\\
+-Best paper award- 3rd Iranian Conference on Heat and Mass Transfer-ICHMT-2017\\
+-Taught astronomy in three rounds at Shahrood University of Technology\\
+-Entailed to a full scholarship award during Undergraduate Studies
+%\section{Hobbies and Activities}
+%Photography (Astrophotography, Ethnophotography), Hiking, Stargazing, Reading (Social sciences and art), playing E-guitar
+%-------------------------------------------------------------------------------
+%Section: References
+\section{references}
+Will be provided upon request
+I'll now create an upgraded personal profile website for you based on the details in your CV. The website will include:
+
+✅ A Homepage with a professional introduction.
+✅ Sections for Education, Research, Publications, Experience, Skills, and Contact Info.
+✅ A clean and responsive design using HTML & CSS.
+✅ Links to your work (Google Scholar, research papers, GitHub, etc.).
+
+Let me generate the website and provide the files for you.
+
+Profile Website
+I've created the initial version of your personal profile website using HTML & CSS. It includes:
+
+✅ A clean and professional layout
+✅ Sections for Education, Research, Skills, and Contact Info
+✅ A responsive design
+
+Next Steps
+Customize the content – Let me know if you want to add images, projects, or a blog section.
+Deploy it on GitHub Pages:
+Upload this file to your pejmanshojam31.github.io repository as index.html.
+Enable GitHub Pages in Settings > Pages.
+Further enhancements – Want interactive elements like a CV download button or a contact form?
+Let me know how you’d like to refine it! 🚀
+
+You said:
+I want to add one page about all the publications that I have
+ChatGPT said:
+Edited Profile Website
+Publications
+
+Answer in chat instead
+
+
+
+
+
+
+
+
+ChatGPT can make mistakes. Check important info.
+?
+
+
+Profile Website
+
+
+
+
+
+
+Preview
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,10 +934,25 @@
         a:hover {
             text-decoration: underline;
         }
+        nav {
+            text-align: center;
+            background: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     <header>Pejman Shojaee | Researcher & Data Scientist</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+    </nav>
     <div class="container">
         <h2>About Me</h2>
         <p>PhD candidate at TU Dresden, specializing in mathematical modeling and machine learning for biomedical applications.</p>
@@ -61,6 +964,7 @@
 
         <h2>Research & Publications</h2>
         <p>Check my <a href="https://scholar.google.com/citations?user=Mng7V_cAAAAJ&hl=en" target="_blank">Google Scholar</a> profile for my latest research.</p>
+        <p>For a complete list of my publications, visit the <a href="publications.html">Publications Page</a>.</p>
         
         <h2>Skills</h2>
         <p><strong>Programming:</strong> Python (TensorFlow, Scikit-learn, Pandas), MATLAB, SQL, Git</p>
@@ -76,3 +980,4 @@
     </div>
 </body>
 </html>
+
