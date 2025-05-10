@@ -74,6 +74,19 @@
         .hobby-text {
             text-align: left;
         }
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .photo-gallery figure {
+            text-align: center;
+            margin: 0;
+        }
+        .photo-gallery img {
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -85,28 +98,44 @@
         <a href="hobbies.html">Hobbies</a>
     </nav>
     <div class="container">
-        <h2>Running</h2>
-        <div class="hobby-item">
-            <img src="running.jpg" alt="Running">
-            <div class="hobby-text">
-                <p>Running is one of my passions. I enjoy long-distance running and have participated in various marathons and ultra-marathon events. It helps me stay fit and provides a mental break from research.</p>
-            </div>
-        </div>
-        
         <h2>Trail Running</h2>
-        <div class="hobby-item">
-            <img src="running.jpg" alt="Trail Running">
-            <div class="hobby-text">
-                <p>Trail running is one of my passions. I enjoy exploring nature, running through forests, mountains, and trails. It keeps me physically fit and mentally refreshed. <a href="trail-running.html">Learn more about my trail running adventures</a>.</p>
-            </div>
+        <div class="photo-gallery">
+            <figure>
+                <img src="Trail_running_photos/photo_2025-05-09_18-34-20.jpg" alt="Trail Running 1" style="width: 150px; height: auto;">
+                <figcaption>Exploring scenic trails in the mountains.</figcaption>
+            </figure>
+            <figure>
+                <img src="Trail_running_photos/photo_2025-05-09_18-34-54.jpg" alt="Trail Running 2" style="width: 150px; height: auto;">
+                <figcaption>Running through dense forest paths.</figcaption>
+            </figure>
+            <figure>
+                <img src="Trail_running_photos/photo_2025-05-10_09-56-37.jpg" alt="Trail Running 3" style="width: 150px; height: auto;">
+                <figcaption>Enjoying a sunrise trail run.</figcaption>
+            </figure>
+            <figure>
+                <img src="Trail_running_photos/photo_2025-05-10_09-56-43.jpg" alt="Trail Running 4" style="width: 150px; height: auto;">
+                <figcaption>Crossing rocky terrains during a trail run.</figcaption>
+            </figure>
         </div>
 
         <h2>Astrophotography</h2>
-        <div class="hobby-item">
-            <img src="astrophotography.jpg" alt="Astrophotography">
-            <div class="hobby-text">
-                <p>Astrophotography allows me to capture the beauty of the cosmos. I enjoy photographing galaxies, nebulae, and star clusters, exploring the wonders of the night sky. <a href="astrophotography.html">Discover my astrophotography work</a>.</p>
-            </div>
+        <div class="photo-gallery">
+            <figure>
+                <img src="Astrophotography_photos/NGC7000.png" alt="NGC 7000" style="width: 150px; height: auto;">
+                <figcaption>The North America Nebula captured on a clear night.</figcaption>
+            </figure>
+            <figure>
+                <img src="Astrophotography_photos/photo_2025-05-09_18-33-05.jpg" alt="Astrophotography 1" style="width: 150px; height: auto;">
+                <figcaption>Star clusters shining brightly in the night sky.</figcaption>
+            </figure>
+            <figure>
+                <img src="Astrophotography_photos/photo_2025-05-09_18-33-12.jpg" alt="Astrophotography 2" style="width: 150px; height: auto;">
+                <figcaption>A stunning view of a distant galaxy.</figcaption>
+            </figure>
+            <figure>
+                <img src="Astrophotography_photos/photo_2025-05-10_09-56-30.jpg" alt="Astrophotography 3" style="width: 150px; height: auto;">
+                <figcaption>Capturing the Milky Way in all its glory.</figcaption>
+            </figure>
         </div>
     </div>
     <div class="contact">
