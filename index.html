@@ -10,16 +10,35 @@
     <meta property="og:image" content="profile (2).jpg">
     <meta property="og:url" content="https://pejmanshojam31.github.io/index.html">
     <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --header-bg: #333;
+            --header-text: white;
+            --nav-bg: #444;
+            --nav-text: white;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f4f4f4;
+            --header-bg: #1e1e1e;
+            --header-text: #f4f4f4;
+            --nav-bg: #333;
+            --nav-text: #f4f4f4;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             text-align: center;
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: var(--header-bg);
+            color: var(--header-text);
             text-align: center;
             padding: 20px;
             font-size: 24px;
@@ -56,11 +75,11 @@
         }
         nav {
             text-align: center;
-            background: #444;
+            background-color: var(--nav-bg);
             padding: 10px;
         }
         nav a {
-            color: white;
+            color: var(--nav-text);
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
@@ -85,6 +104,7 @@
         <a href="publications.html">Publications</a>
         <a href="cv.html">CV</a>
         <a href="hobbies.html">Hobbies</a>
+        <button id="theme-toggle" style="margin: 10px; padding: 5px 10px;">Toggle Dark Mode</button>
     </nav>
     <div class="container">
         <img src="profile (2).jpg" alt="Pejman Shojaee" class="profile-img">
@@ -114,5 +134,18 @@
     <div class="contact">
         &copy; 2024 Pejman Shojaee | All rights reserved
     </div>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Load the saved theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </body>
 </html>
