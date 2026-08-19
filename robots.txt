@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pejmanshojam31.github.io/sitemap.xml
