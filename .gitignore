@@ -1,3 +1,6 @@
 .DS_Store
 *.pyc
 __pycache__/
+
+# source photos — only the web-sized versions in assets/img/ are served
+hobbies/
