@@ -65,6 +65,7 @@
       <p class="lede lede--wide" style="margin-top:1.25rem">
         Stated as problems rather than methods &mdash; because nobody has a shortage of methods.
         Each entry says what the situation looks like, what I would do, and what you end up holding.
+        Scope and timing are worked out per project.
       </p>
       <p style="color:var(--muted);max-width:60ch">
         Two audiences find their way here, and they need different things. Teams building health
@@ -101,7 +102,6 @@
         <dl class="spec">
           <div><dt>Approach</dt><dd>Nail the phenotype and endpoint definitions first. Screen across all analytes with proper multiple-testing control, model non-linear dose&ndash;response rather than assuming linearity, then confirm with time-to-event models and pathway-level interpretation.</dd></div>
           <div><dt>You get</dt><dd><strong>A ranked, FDR-controlled biomarker panel</strong> with effect sizes and confidence intervals, the biology it implicates, and an honest account of what the cohort cannot tell you.</dd></div>
-          <div><dt>Typical</dt><dd>6&ndash;12 weeks, depending on data access.</dd></div>
         </dl>
       </article>
 
@@ -118,7 +118,6 @@
         <dl class="spec">
           <div><dt>Approach</dt><dd>A structured audit: data-flow review for leakage, patient-level split integrity, recalibration, external or temporal validation, subgroup performance, and decision-curve analysis at the thresholds you actually use.</dd></div>
           <div><dt>You get</dt><dd><strong>A validation report</strong> naming the specific failure modes, a recalibrated model where recalibration is enough, and a clear statement of the population the model is licensed for.</dd></div>
-          <div><dt>Typical</dt><dd>3&ndash;6 weeks.</dd></div>
         </dl>
       </article>
 
@@ -134,7 +133,6 @@
         <dl class="spec">
           <div><dt>Approach</dt><dd>Build a mechanistic model of the process, generate a virtual cohort, and run the study in silico under realistic noise and dropout. Vary the design; see which versions can actually resolve the effect.</dd></div>
           <div><dt>You get</dt><dd><strong>A design recommendation backed by simulation</strong> &mdash; sample size, timing, which measurement carries the information, and which planned measurements are not worth their cost.</dd></div>
-          <div><dt>Typical</dt><dd>4&ndash;10 weeks.</dd></div>
         </dl>
       </article>
 
@@ -150,7 +148,6 @@
         <dl class="spec">
           <div><dt>Approach</dt><dd>Reproducible segmentation and quantitative feature extraction, feature selection that is stable under resampling, and models sized to the cohort you have rather than the one you wish you had.</dd></div>
           <div><dt>You get</dt><dd><strong>A running image-to-prediction pipeline</strong>, the stable feature set, and validation that survives the small-n regime.</dd></div>
-          <div><dt>Typical</dt><dd>6&ndash;12 weeks.</dd></div>
         </dl>
       </article>
 
@@ -166,7 +163,6 @@
         <dl class="spec">
           <div><dt>Approach</dt><dd>Rebuild the analysis as a version-controlled, environment-pinned pipeline with provenance from raw extract to final figure, documented decisions, and tests on the steps that matter.</dd></div>
           <div><dt>You get</dt><dd><strong>A pipeline anyone on the team can re-run</strong> to identical numbers, plus documentation of every judgement call the original analysis made silently.</dd></div>
-          <div><dt>Typical</dt><dd>3&ndash;8 weeks.</dd></div>
         </dl>
       </article>
 
@@ -175,15 +171,13 @@
           <p class="label label--muted">Problem 06</p>
           <h3>Your data exists, but not in a form anything can analyse</h3>
           <p class="solution__problem">
-            A biobank, a registry or a cohort whose records live in paper forms, PDFs, lab exports and
-            a dozen spreadsheets with incompatible conventions &mdash; so every new question starts with
-            weeks of manual assembly.
+            A biobank, a registry or a cohort whose records were never collected with analysis in
+            mind, so every new question begins by assembling the data by hand.
           </p>
         </div>
         <dl class="spec">
-          <div><dt>Approach</dt><dd>Design a data model that matches how the data is actually collected, build the digitisation and import path with validation and QC at the point of entry, resolve the conventions that conflict, and put the routine analyses behind an interface the team uses without me. I built exactly this for the Perakakis Lab's in-house biobank.</dd></div>
-          <div><dt>You get</dt><dd><strong>A structured, validated dataset and the software that maintains it</strong> &mdash; plus analyses that run on demand instead of being rebuilt by hand each time.</dd></div>
-          <div><dt>Typical</dt><dd>8&ndash;16 weeks, depending on how many source formats there are.</dd></div>
+          <div><dt>Approach</dt><dd>Design a data model that fits how the data is actually collected, build the path that digitises it, and put the analysis behind an application the team runs itself. I built this for the Perakakis Lab's in-house biobank.</dd></div>
+          <div><dt>You get</dt><dd><strong>A structured dataset and the software that maintains it</strong> &mdash; plus analyses the team can run directly, instead of rebuilding them by hand each time.</dd></div>
         </dl>
       </article>
 
@@ -199,7 +193,6 @@
         <dl class="spec">
           <div><dt>Approach</dt><dd>Scope the task to something checkable, ground it in retrieval over sources you control, structure the output so it can be validated automatically, and build an evaluation set before shipping. Multi-provider routing so one vendor's outage or price change is not an outage of yours.</dd></div>
           <div><dt>You get</dt><dd><strong>A working pipeline with an evaluation harness</strong> &mdash; measured accuracy on your own task, cited sources, and a clear boundary around what the system is allowed to assert.</dd></div>
-          <div><dt>Typical</dt><dd>4&ndash;8 weeks.</dd></div>
         </dl>
       </article>
     </div>
@@ -290,15 +283,15 @@
           <h3>A conversation</h3>
           <p>
             An hour on your data and your question. Often that is enough to establish whether the
-            problem is a modelling problem at all &mdash; and it costs nothing.
+            problem is a modelling problem at all, and what it would take to answer it.
           </p>
         </article>
         <article class="card">
           <p class="card__num">02</p>
           <h3>A scoped piece of work</h3>
           <p>
-            A defined question, an agreed deliverable and a timeline: a validation audit, a biomarker
-            screen, a simulation study. Ends with something you can hand to someone else.
+            A defined question and an agreed deliverable: a validation audit, a biomarker screen, a
+            simulation study. Ends with something you can hand to someone else.
           </p>
         </article>
         <article class="card">
@@ -310,6 +303,12 @@
           </p>
         </article>
       </div>
+
+      <p class="note" style="margin-top:1.75rem;max-width:62ch">
+        I hold a full-time postdoctoral position in Dresden, so scope and timing are agreed case by
+        case rather than off a menu. Write to me with the problem and I will tell you honestly
+        whether I am the right person and whether the timing works.
+      </p>
 
       <div class="callout" style="margin-top:2.75rem">
         <p>
