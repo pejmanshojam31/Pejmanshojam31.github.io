@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions &mdash; Pejman Shojaee</title>
+<meta name="description" content="The problems I solve for health-tech teams and research groups: biomarker discovery, model validation and calibration, in-silico study design, radiomics pipelines, reproducible analysis and LLM systems.">
+<link rel="canonical" href="https://pejmanshojam31.github.io/solutions.html">
+<meta name="author" content="Pejman Shojaee">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pejman Shojaee">
+<meta property="og:title" content="Solutions &mdash; Pejman Shojaee">
+<meta property="og:description" content="The problems I solve for health-tech teams and research groups: biomarker discovery, model validation and calibration, in-silico study design, radiomics pipelines, reproducible analysis and LLM systems.">
+<meta property="og:url" content="https://pejmanshojam31.github.io/solutions.html">
+<meta property="og:image" content="https://pejmanshojam31.github.io/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#fbf9f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      Pejman Shojaee
+      <span class="brand__sub">Systems Medicine &middot; AI</span>
+    </a>
+    <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="ai.html">AI &amp; ML</a>
+      <a href="solutions.html" aria-current="page">Solutions</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="beyond-research.html">Beyond</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="wrap">
+      <p class="label">Solutions</p>
+      <h1 style="max-width:15ch">The problems I am good at.</h1>
+      <p class="lede lede--wide" style="margin-top:1.25rem">
+        Stated as problems rather than methods &mdash; because nobody has a shortage of methods.
+        Each entry says what the situation looks like, what I would do, and what you end up holding.
+      </p>
+      <p style="color:var(--muted);max-width:60ch">
+        Two audiences find their way here, and they need different things. Teams building health
+        products want a deliverable. Research groups want a collaborator. The underlying toolkit
+        is the same; the shape of the engagement is not.
+      </p>
+      <div class="btn-row" style="margin-top:1.5rem">
+        <a class="btn btn--ghost" href="#industry">For health-tech teams</a>
+        <a class="btn btn--ghost" href="#academic">For research groups</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="industry">
+    <div class="wrap">
+      <div class="track">
+        <p class="label">Track one</p>
+        <h2 class="track__title">For teams building health products</h2>
+        <p class="track__intro">
+          You have data, a hypothesis and a deadline. What is usually missing is someone who can
+          tell you whether the signal is real before you build a product on top of it.
+        </p>
+      </div>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 01</p>
+          <h3>You have a cohort and no idea where the signal is</h3>
+          <p class="solution__problem">
+            Thousands of analytes, hundreds of thousands of rows, a dozen plausible endpoints, and
+            an analysis that keeps producing findings that evaporate on the next dataset.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>Nail the phenotype and endpoint definitions first. Screen across all analytes with proper multiple-testing control, model non-linear dose&ndash;response rather than assuming linearity, then confirm with time-to-event models and pathway-level interpretation.</dd></div>
+          <div><dt>You get</dt><dd><strong>A ranked, FDR-controlled biomarker panel</strong> with effect sizes and confidence intervals, the biology it implicates, and an honest account of what the cohort cannot tell you.</dd></div>
+          <div><dt>Typical</dt><dd>6&ndash;12 weeks, depending on data access.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 02</p>
+          <h3>Your model looks excellent in the paper and fails in the clinic</h3>
+          <p class="solution__problem">
+            High AUC on the development set, disappointing performance everywhere else. Usually this
+            is leakage, distribution shift, or a model that ranks well but whose probabilities mean
+            nothing.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>A structured audit: data-flow review for leakage, patient-level split integrity, recalibration, external or temporal validation, subgroup performance, and decision-curve analysis at the thresholds you actually use.</dd></div>
+          <div><dt>You get</dt><dd><strong>A validation report</strong> naming the specific failure modes, a recalibrated model where recalibration is enough, and a clear statement of the population the model is licensed for.</dd></div>
+          <div><dt>Typical</dt><dd>3&ndash;6 weeks.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 03</p>
+          <h3>You need to know whether the study is worth running</h3>
+          <p class="solution__problem">
+            An expensive trial, a costly assay, or a new measurement &mdash; and no way to know in
+            advance which arm, endpoint or sampling schedule gives you a chance of detecting anything.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>Build a mechanistic model of the process, generate a virtual cohort, and run the study in silico under realistic noise and dropout. Vary the design; see which versions can actually resolve the effect.</dd></div>
+          <div><dt>You get</dt><dd><strong>A design recommendation backed by simulation</strong> &mdash; sample size, timing, which measurement carries the information, and which planned measurements are not worth their cost.</dd></div>
+          <div><dt>Typical</dt><dd>4&ndash;10 weeks.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 04</p>
+          <h3>You have imaging and outcomes but no pipeline</h3>
+          <p class="solution__problem">
+            MRI, histology or microscopy sitting in a folder, an outcome column, and a cohort far too
+            small for the deep-learning approach everyone suggests.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>Reproducible segmentation and quantitative feature extraction, feature selection that is stable under resampling, and models sized to the cohort you have rather than the one you wish you had.</dd></div>
+          <div><dt>You get</dt><dd><strong>A running image-to-prediction pipeline</strong>, the stable feature set, and validation that survives the small-n regime.</dd></div>
+          <div><dt>Typical</dt><dd>6&ndash;12 weeks.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 05</p>
+          <h3>Your analysis cannot be re-run</h3>
+          <p class="solution__problem">
+            The results exist, the person who produced them has moved on, and nobody can reproduce
+            the figure &mdash; which becomes urgent exactly when a regulator, a referee or an investor asks.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>Rebuild the analysis as a version-controlled, environment-pinned pipeline with provenance from raw extract to final figure, documented decisions, and tests on the steps that matter.</dd></div>
+          <div><dt>You get</dt><dd><strong>A pipeline anyone on the team can re-run</strong> to identical numbers, plus documentation of every judgement call the original analysis made silently.</dd></div>
+          <div><dt>Typical</dt><dd>3&ndash;8 weeks.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 06</p>
+          <h3>Your data exists, but not in a form anything can analyse</h3>
+          <p class="solution__problem">
+            A biobank, a registry or a cohort whose records live in paper forms, PDFs, lab exports and
+            a dozen spreadsheets with incompatible conventions &mdash; so every new question starts with
+            weeks of manual assembly.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>Design a data model that matches how the data is actually collected, build the digitisation and import path with validation and QC at the point of entry, resolve the conventions that conflict, and put the routine analyses behind an interface the team uses without me. I built exactly this for the Perakakis Lab's in-house biobank.</dd></div>
+          <div><dt>You get</dt><dd><strong>A structured, validated dataset and the software that maintains it</strong> &mdash; plus analyses that run on demand instead of being rebuilt by hand each time.</dd></div>
+          <div><dt>Typical</dt><dd>8&ndash;16 weeks, depending on how many source formats there are.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Problem 07</p>
+          <h3>You want to use LLMs without inheriting their failure modes</h3>
+          <p class="solution__problem">
+            Everyone wants AI in the product. Nobody wants a confident, fluent, wrong answer attached
+            to a clinical or scientific claim.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>Approach</dt><dd>Scope the task to something checkable, ground it in retrieval over sources you control, structure the output so it can be validated automatically, and build an evaluation set before shipping. Multi-provider routing so one vendor's outage or price change is not an outage of yours.</dd></div>
+          <div><dt>You get</dt><dd><strong>A working pipeline with an evaluation harness</strong> &mdash; measured accuracy on your own task, cited sources, and a clear boundary around what the system is allowed to assert.</dd></div>
+          <div><dt>Typical</dt><dd>4&ndash;8 weeks.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="wrap">
+      <div class="track">
+        <p class="label">Track two</p>
+        <h2 class="track__title">For research groups &amp; clinicians</h2>
+        <p class="track__intro">
+          You have the biology, the patients and the question. What is missing is the person who
+          turns it into something a model can answer &mdash; and who stays around for the referee reports.
+        </p>
+      </div>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Question 01</p>
+          <h3>&ldquo;We have a mechanism but no way to test it&rdquo;</h3>
+          <p class="solution__problem">
+            A hypothesis about how cells, tumours or immune populations interact that no experiment
+            can observe directly at the relevant scale.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>What I do</dt><dd>Formalise the mechanism as an agent-based, hybrid or reaction&ndash;diffusion model, calibrate it to whatever data exists, and identify the observable consequences that would distinguish your hypothesis from its competitors.</dd></div>
+          <div><dt>Outcome</dt><dd>A model you can interrogate, a set of testable predictions, and usually a figure that reframes the paper.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Question 02</p>
+          <h3>&ldquo;We have omics data and a statistician-shaped hole&rdquo;</h3>
+          <p class="solution__problem">
+            Proteomic, metabolomic or transcriptomic data alongside clinical variables, and an
+            analysis plan that stops at &ldquo;then we do machine learning&rdquo;.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>What I do</dt><dd>Integration across omic and clinical layers, cross-sectional and longitudinal; batch and covariate handling; multiple-testing strategy; and interpretation that lands at pathway level rather than a list of accession numbers.</dd></div>
+          <div><dt>Outcome</dt><dd>Analysis, figures and a Methods section written to survive review &mdash; plus the code, so the revision does not restart from zero.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Question 03</p>
+          <h3>&ldquo;Is this study designed well enough to be worth doing?&rdquo;</h3>
+          <p class="solution__problem">
+            Grant deadline approaching, endpoints not settled, and a power calculation nobody
+            quite believes.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>What I do</dt><dd>Endpoint and phenotype definition, realistic power analysis by simulation rather than formula, sampling schedule design, and an analysis plan written before the data exists.</dd></div>
+          <div><dt>Outcome</dt><dd>A pre-specified analysis plan and a defensible design section &mdash; the parts reviewers attack first.</dd></div>
+        </dl>
+      </article>
+
+      <article class="solution">
+        <div>
+          <p class="label label--muted">Question 04</p>
+          <h3>&ldquo;We need modelling in the proposal, and someone to run it&rdquo;</h3>
+          <p class="solution__problem">
+            A consortium proposal that needs a credible computational work package, written by
+            somebody who will actually deliver it.
+          </p>
+        </div>
+        <dl class="spec">
+          <div><dt>What I do</dt><dd>Draft the modelling and data-analysis work package, scope it to something deliverable, and join the consortium to execute it. I also co-supervise doctoral students on the modelling side.</dd></div>
+          <div><dt>Outcome</dt><dd>A work package that reads as feasible because it is, and a named person attached to it.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Working together</p>
+        <h2>Three ways this usually starts</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <p class="card__num">01</p>
+          <h3>A conversation</h3>
+          <p>
+            An hour on your data and your question. Often that is enough to establish whether the
+            problem is a modelling problem at all &mdash; and it costs nothing.
+          </p>
+        </article>
+        <article class="card">
+          <p class="card__num">02</p>
+          <h3>A scoped piece of work</h3>
+          <p>
+            A defined question, an agreed deliverable and a timeline: a validation audit, a biomarker
+            screen, a simulation study. Ends with something you can hand to someone else.
+          </p>
+        </article>
+        <article class="card">
+          <p class="card__num">03</p>
+          <h3>A research collaboration</h3>
+          <p>
+            Co-authored work over a longer horizon &mdash; a joint project, a shared doctoral student,
+            or a work package inside a larger consortium.
+          </p>
+        </article>
+      </div>
+
+      <div class="callout" style="margin-top:2.75rem">
+        <p>
+          What I will not do is hand you a number I do not believe. If a cohort cannot answer the
+          question, the most valuable thing I can deliver is that finding &mdash; early, and in writing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<section class="band">
+  <div class="wrap">
+    <div class="band__grid">
+      <div>
+        <p class="label">Get in touch</p>
+        <h2>Have data and a question that needs answering?</h2>
+        <p style="max-width:46ch">
+          I work with researchers, clinicians, health-tech teams and bioinformaticians at the
+          interface of biology, data science and personalised medicine &mdash; from a one-hour
+          sanity check on a study design to a full modelling collaboration.
+        </p>
+        <div class="btn-row" style="margin-top:1.6rem">
+          <a class="btn btn--primary" href="mailto:pejman.shojaee@tu-dresden.de">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            Email me
+          </a>
+          <a class="btn btn--ghost" href="CV.pdf">Download CV</a>
+        </div>
+      </div>
+      <div>
+        <p class="label label--plain" style="color:var(--inverse-mute)">Details</p>
+        <dl class="def-grid">
+          <dt>Email</dt>
+          <dd><a href="mailto:pejman.shojaee@tu-dresden.de">pejman.shojaee@tu-dresden.de</a></dd>
+          <dt>ORCID</dt>
+          <dd><a href="https://orcid.org/0000-0003-3298-3315" target="_blank" rel="noopener">0000-0003-3298-3315</a></dd>
+          <dt>Based in</dt>
+          <dd>Dresden, Germany</dd>
+          <dt>Languages</dt>
+          <dd>English (C1) &middot; German (B2) &middot; Persian (native)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Pejman Shojaee &middot; Dresden</p>
+    <div class="socials">
+      <a href="https://orcid.org/0000-0003-3298-3315" target="_blank" rel="noopener" aria-label="ORCID">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 17.5H5.85V7.906h1.519V17.5zM6.61 6.541a.881.881 0 1 1 0-1.762.881.881 0 0 1 0 1.762zM17.7 14.881c-.85.85-2.006 1.294-3.35 1.294h-3.7V7.906h3.7c1.344 0 2.5.444 3.35 1.294.85.85 1.3 1.98 1.3 3.34s-.45 2.49-1.3 3.34zm-1.15-5.575c-.575-.575-1.4-.881-2.35-.881h-2.03v6.55h2.03c.95 0 1.775-.306 2.35-.881.575-.575.887-1.375.887-2.394s-.312-1.819-.887-2.394z"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=Mng7V_cAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 8.5l11 6.5 9-5.32V17h2V8.5L12 2z"/><path d="M5.5 12.4v3.3c0 2.4 2.9 4.3 6.5 4.3s6.5-1.9 6.5-4.3v-3.3L12 16.2l-6.5-3.8z"/></svg>
+      </a>
+      <a href="https://www.researchgate.net/profile/Pejman-Shojaee" target="_blank" rel="noopener" aria-label="ResearchGate">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.586 0H4.414A4.414 4.414 0 0 0 0 4.414v15.172A4.414 4.414 0 0 0 4.414 24h15.172A4.414 4.414 0 0 0 24 19.586V4.414A4.414 4.414 0 0 0 19.586 0zM8.184 16.24c-.53 0-.98-.13-1.35-.39a2.51 2.51 0 0 1-.86-1.06 5.2 5.2 0 0 1-.42-1.5 14.4 14.4 0 0 1-.11-1.82c0-.66.04-1.27.11-1.82.08-.56.22-1.06.42-1.5.2-.44.49-.79.86-1.05.37-.26.82-.39 1.35-.39h1.6c.54 0 .99.13 1.36.39.37.26.65.61.85 1.05.2.44.34.94.42 1.5.07.55.11 1.16.11 1.82h-1.42c0-.6-.03-1.13-.09-1.6a3.9 3.9 0 0 0-.28-1.16c-.13-.31-.3-.55-.53-.7-.22-.16-.5-.24-.83-.24h-1.4c-.33 0-.6.08-.83.24-.22.15-.4.39-.53.7-.13.32-.22.7-.28 1.16-.05.47-.08 1-.08 1.6 0 .6.03 1.13.08 1.6.06.46.15.85.28 1.16.13.31.31.55.53.7.23.16.5.24.83.24h1.4c.62 0 1.05-.17 1.3-.5.24-.34.36-.87.36-1.6v-.42h-1.9v-1.28h3.32v5.4h-1.06l-.16-1.02c-.2.36-.47.63-.8.82-.34.19-.77.29-1.28.29H8.184zm10.3 3.5c-.5 0-.93-.12-1.28-.36-.36-.24-.68-.6-.97-1.08l-1.55-2.58c-.13-.22-.27-.37-.42-.46a1.02 1.02 0 0 0-.54-.13h-.62v4.4h-1.42V8.02h3.15c.53 0 1 .08 1.4.25.4.16.74.39 1.01.68.27.29.47.63.61 1.02.13.4.2.82.2 1.28 0 .74-.17 1.36-.52 1.86-.34.5-.83.84-1.46 1.01.2.13.38.33.55.6l1.4 2.34c.15.25.29.42.43.51.14.1.31.14.51.14h.24v1.5h-.72z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/pejman-shojaee-05525868" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://github.com/pejmanshojam31" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
