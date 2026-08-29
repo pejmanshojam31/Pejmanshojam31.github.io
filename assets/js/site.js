@@ -42,6 +42,35 @@
     });
   }
 
+  /* ---- analytics opt-out confirmation --------------------------------- */
+  /* The flag itself is set by the inline <head> script, before the counter
+     runs. This only tells you whether it stuck, when you arrive via
+     ?skipgc (to exclude this browser) or ?skipgc=off (to count it again). */
+
+  if (/[?&]skipgc(=|&|$)/.test(location.search)) {
+    var off = /skipgc=off/.test(location.search);
+    var stuck;
+    try { stuck = localStorage.getItem("skipgc") === "t"; } catch (e) { stuck = null; }
+    var note = document.createElement("div");
+    note.setAttribute("role", "status");
+    note.style.cssText =
+      "position:fixed;left:50%;bottom:1.25rem;transform:translateX(-50%);z-index:400;" +
+      "max-width:min(90vw,34rem);padding:.7rem 1.1rem;border-radius:3px;" +
+      "font:500 .78rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;" +
+      "letter-spacing:.05em;text-transform:uppercase;" +
+      "background:#17150f;color:#f4f0e8;border:1px solid #453e35;" +
+      "box-shadow:0 18px 40px -20px rgba(0,0,0,.6)";
+    note.textContent = stuck === null
+      ? "Could not store the setting — private browsing?"
+      : off
+        ? (stuck ? "Still excluded — try again" : "This browser is counted again")
+        : (stuck ? "This browser is now excluded from the visitor count"
+                 : "Could not store the setting — private browsing?");
+    document.body.appendChild(note);
+    setTimeout(function () { note.style.transition = "opacity .5s"; note.style.opacity = "0"; }, 5000);
+    setTimeout(function () { note.remove(); }, 5600);
+  }
+
   /* ---- lightbox ------------------------------------------------------- */
 
   var shots = Array.prototype.slice.call(document.querySelectorAll(".shot"));

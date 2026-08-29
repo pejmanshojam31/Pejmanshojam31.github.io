@@ -102,14 +102,22 @@ login. Every page in both languages carries this in its `<head>`:
 It is emitted by the build script from `GOATCOUNTER_CODE`; blank that value and the
 script disappears from every page.
 
-**Excluding your own visits.** Open the live site in your browser, then in the
-developer console run:
+**Excluding your own visits.** Open this link once in each browser and on each
+device you use:
 
-```js
-localStorage.setItem('skipgc', 't')
-```
+<https://pejmanshojam31.github.io/?skipgc>
 
-That browser stops being counted. Do it once per browser and device you use.
+A short confirmation appears and that browser stops being counted. To undo it and
+be counted again, open <https://pejmanshojam31.github.io/?skipgc=off>.
+
+The flag is stored in `localStorage` under the site's origin, so it has to be set on
+the live site — setting it on `localhost` does not carry over. It is per browser and
+per device, and clearing site data resets it. Private/incognito windows cannot store
+it, and the confirmation says so.
+
+The flag is applied by the inline script in each page's `<head>`, which runs before
+the counter script, so even the visit that sets it is not counted. Equivalent to
+running `localStorage.setItem('skipgc', 't')` in the console, but usable on a phone.
 
 GoatCounter sets no cookies and stores no personal data, so under GDPR it needs no
 consent banner — which matters for a site run from Germany. Google Analytics was
