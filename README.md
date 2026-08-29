@@ -88,6 +88,40 @@ python3 -m http.server 8000
 Then open <http://localhost:8000>. Use a server rather than opening the file directly,
 so paths resolve the way they will in production.
 
+## Visitor counter
+
+The site has a hook for a **private, cookieless visitor counter** — nothing is shown
+on the page, and the numbers are visible only in your own dashboard.
+
+It is currently **off**: no analytics script is served, and no third party sees your
+visitors. To switch it on:
+
+1. Create a free account at <https://www.goatcounter.com> (choose a site code, e.g.
+   `pejmanshojaee`). Free for personal use.
+2. Put that code into `GOATCOUNTER_CODE` in the build script and regenerate the pages,
+   or paste this line into each page's `<head>` by hand:
+
+   ```html
+   <script data-goatcounter="https://YOURCODE.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+   ```
+
+3. Your stats live at `https://YOURCODE.goatcounter.com`, behind your login.
+
+GoatCounter sets no cookies and stores no personal data, so under GDPR it needs no
+consent banner — which matters for a site hosted from Germany. Cloudflare Web
+Analytics is an equivalent free alternative. Avoid Google Analytics here: it sets
+cookies, and its use in the EU is legally contested.
+
+## The CV PDF
+
+`CV.pdf` is served publicly, so it must not carry a home address or phone number.
+The published copy has the institutional addresses only, and the mobile number has
+been removed from the PDF's content stream — not merely covered over, so it cannot
+be recovered by copy-paste or text extraction.
+
+When replacing it, check the personal-data block first.
+
 ## Notes
 
 The original full-resolution photos and the old icon PNGs were removed from the working
