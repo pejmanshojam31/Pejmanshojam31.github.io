@@ -4,3 +4,7 @@ __pycache__/
 
 # source photos — only the web-sized versions in assets/img/ are served
 hobbies/
+
+# incoming CV exports — never publish; they carry personal contact details
+output.pdf
+*.incoming.pdf
