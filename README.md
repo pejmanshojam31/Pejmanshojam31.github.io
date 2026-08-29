@@ -90,28 +90,34 @@ so paths resolve the way they will in production.
 
 ## Visitor counter
 
-The site has a hook for a **private, cookieless visitor counter** — nothing is shown
-on the page, and the numbers are visible only in your own dashboard.
+The site uses **GoatCounter**, a cookieless counter. Nothing is shown on the page;
+the numbers are visible only to you, at <https://pejpej.goatcounter.com> behind your
+login. Every page in both languages carries this in its `<head>`:
 
-It is currently **off**: no analytics script is served, and no third party sees your
-visitors. To switch it on:
+```html
+<script data-goatcounter="https://pejpej.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+```
 
-1. Create a free account at <https://www.goatcounter.com> (choose a site code, e.g.
-   `pejmanshojaee`). Free for personal use.
-2. Put that code into `GOATCOUNTER_CODE` in the build script and regenerate the pages,
-   or paste this line into each page's `<head>` by hand:
+It is emitted by the build script from `GOATCOUNTER_CODE`; blank that value and the
+script disappears from every page.
 
-   ```html
-   <script data-goatcounter="https://YOURCODE.goatcounter.com/count"
-           async src="//gc.zgo.at/count.js"></script>
-   ```
+**Excluding your own visits.** Open the live site in your browser, then in the
+developer console run:
 
-3. Your stats live at `https://YOURCODE.goatcounter.com`, behind your login.
+```js
+localStorage.setItem('skipgc', 't')
+```
+
+That browser stops being counted. Do it once per browser and device you use.
 
 GoatCounter sets no cookies and stores no personal data, so under GDPR it needs no
-consent banner — which matters for a site hosted from Germany. Cloudflare Web
-Analytics is an equivalent free alternative. Avoid Google Analytics here: it sets
-cookies, and its use in the EU is legally contested.
+consent banner — which matters for a site run from Germany. Google Analytics was
+deliberately not used: it sets cookies and its EU use is legally contested.
+
+The three old redirect stubs (`Hobbies.html`, `astrophotography.html`,
+`trail-running.html`) carry no counter on purpose — they bounce immediately to
+`beyond-research.html`, which does count.
 
 ## The CV PDF
 
