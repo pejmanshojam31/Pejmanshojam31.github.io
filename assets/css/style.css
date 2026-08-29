@@ -323,6 +323,26 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
 
 .nav-toggle { display: none; }
 
+/* language switcher — sits beside the theme toggle in the header */
+.lang-switch {
+  display: inline-grid; place-items: center;
+  height: 2.3rem;
+  padding-inline: .62rem;
+  flex: none;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: transparent;
+  background-image: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.lang-switch:hover { color: var(--ink); border-color: var(--rule-strong); }
+
 .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
