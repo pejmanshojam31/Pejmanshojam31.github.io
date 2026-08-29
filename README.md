@@ -26,7 +26,6 @@ assets/js/site.js       Theme toggle, mobile nav, gallery lightbox
 assets/favicon.svg      Favicon
 assets/img/             profile.jpg, og-card.jpg, hero-*.webp, gallery/, thumbs/
 
-CV.pdf                  Downloadable CV, linked from the header buttons
 sitemap.xml             Update this if you add or rename a page
 robots.txt
 
@@ -127,14 +126,16 @@ The three old redirect stubs (`Hobbies.html`, `astrophotography.html`,
 `trail-running.html`) carry no counter on purpose — they bounce immediately to
 `beyond-research.html`, which does count.
 
-## The CV PDF
+## The CV
 
-`CV.pdf` is served publicly, so it must not carry a home address or phone number.
-The published copy has the institutional addresses only, and the mobile number has
-been removed from the PDF's content stream — not merely covered over, so it cannot
-be recovered by copy-paste or text extraction.
+There is **no CV PDF on the site**. `cv.html` (and `de/cv.html`) is the CV, and the
+CV page has a *Print / save as PDF* button that uses the browser's own print dialog;
+the print rules at the bottom of `style.css` strip the header, footer, buttons and
+contact band so the printed output is clean.
 
-When replacing it, check the personal-data block first.
+This is deliberate. A CV PDF carries a personal-data block — home address, phone —
+that should not sit on a public, indexed page. Keeping the CV as HTML means there is
+no file to leak and nothing to keep in sync.
 
 ## Notes
 

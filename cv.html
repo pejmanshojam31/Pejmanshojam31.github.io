@@ -76,10 +76,10 @@
         Background in biomedical and mechanical engineering.
       </p>
       <div class="btn-row" style="margin-top:1.5rem">
-        <a class="btn btn--primary" href="CV.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Download PDF
-        </a>
+        <button class="btn btn--primary" type="button" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          Print / save as PDF
+        </button>
         <a class="btn btn--ghost" href="mailto:pejman.shojaee@tu-dresden.de">Email me</a>
       </div>
     </div>
@@ -333,12 +333,23 @@
       <div class="split__aside"><p class="label">Service &amp; recognition</p></div>
       <div>
         <h2>Peer review</h2>
-        <p style="color:var(--muted);max-width:62ch">
-          Reviewer for <em>Nature Communications Medicine</em>, <em>npj Systems Biology and
-          Applications</em>, <em>Scientific Reports</em>, <em>Computer Methods and Programs in
-          Biomedicine</em>, <em>Computers in Biology and Medicine</em>, <em>Journal of Visualized
-          Experiments</em>, and <em>Australasian Physical &amp; Engineering Sciences in Medicine</em>.
+        <p style="color:var(--muted);max-width:62ch;margin-bottom:1.1rem">
+          I review for:
         </p>
+        <ul class="chips">
+          <li><span class="chip">Nature Communications Medicine</span></li>
+          <li><span class="chip">npj Systems Biology and Applications</span></li>
+          <li><span class="chip">Scientific Reports</span></li>
+          <li><span class="chip">Metabolism: Clinical and Experimental</span></li>
+          <li><span class="chip">Frontiers in Oncology</span></li>
+          <li><span class="chip">Frontiers in Medicine</span></li>
+          <li><span class="chip">PLOS One</span></li>
+          <li><span class="chip">PLOS Complex Systems</span></li>
+          <li><span class="chip">PLOS Soft Matter</span></li>
+          <li><span class="chip">Computer Methods and Programs in Biomedicine</span></li>
+          <li><span class="chip">Computers in Biology and Medicine</span></li>
+          <li><span class="chip">Physics of Fluids</span></li>
+        </ul>
 
         <h2 style="margin-top:2.5rem">Memberships</h2>
         <dl class="def-grid" style="margin-bottom:2.5rem">
@@ -382,7 +393,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
             Email me
           </a>
-          <a class="btn btn--ghost" href="CV.pdf">Download CV</a>
         </div>
       </div>
       <div>
