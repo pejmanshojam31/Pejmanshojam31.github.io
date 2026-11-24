@@ -77,10 +77,9 @@
         that makes working at this scale possible.
       </p>
       <p style="color:var(--muted);max-width:62ch">
-        Two strands run through the work. The first is applied machine learning on biomedical
-        data: proteomics, immune profiling, medical imaging and longitudinal clinical records.
-        The second is engineering: LLM and agent systems, reproducible pipelines, and the
-        infrastructure that turns a one-off analysis into something a team can rely on.
+        Two strands: applied machine learning on biomedical data &mdash; proteomics, immune
+        profiling, imaging, longitudinal clinical records &mdash; and the engineering around it,
+        from LLM and agent systems to pipelines a team can rely on.
       </p>
       <ul class="taglist" style="margin-top:1.5rem">
         <li><span class="tag">Python</span></li>
@@ -116,10 +115,10 @@
               <h3>Proteomic risk modelling at biobank scale</h3>
               <p>
                 Plasma proteomics and immune-cell counts against incident disease in UK&nbsp;Biobank
-                cohorts of several hundred thousand participants. Glycaemic phenotyping from HbA1c,
-                medication and diagnostic codes; per-analyte models across thousands of proteins with
-                Benjamini&ndash;Hochberg control; restricted cubic splines for non-linear dose&ndash;response;
-                Cox models for time to event; and pathway enrichment to turn a protein list back into biology.
+                cohorts of several hundred thousand. Glycaemic phenotyping from HbA1c, medication and
+                diagnostic codes; per-analyte models across thousands of proteins with
+                Benjamini&ndash;Hochberg control; splines for non-linear dose&ndash;response; Cox models
+                for time to event; pathway enrichment to turn a protein list back into biology.
               </p>
               <ul class="taglist">
                 <li><span class="tag">UK Biobank</span></li>
@@ -136,9 +135,9 @@
               <h3>Radiomics AI for treatment response</h3>
               <p>
                 An AI framework built at HTW Dresden that predicts tumour spheroid status from
-                radiomic features and, more usefully, predicts the point at which a spheroid escapes
-                treatment control. The hard part was image-processing that stays stable while the
-                underlying biology behaves strongly non-linearly.
+                radiomic features and, more usefully, when a spheroid escapes treatment control. The
+                hard part was image-processing that stays stable while the biology behaves strongly
+                non-linearly.
               </p>
               <ul class="taglist">
                 <li><span class="tag">Feature extraction</span></li>
@@ -152,11 +151,10 @@
             <div>
               <h3>Radio-omics for glioblastoma recurrence</h3>
               <p>
-                Combining quantitative MRI features with simulated tumour&ndash;immune dynamics to predict
-                time to relapse, and to identify which biopsy locations actually carry predictive
-                information. Published in <em>npj Systems Biology and Applications</em> (2025):
-                macrophage density at the tumour edge turned out to matter far more than where a
-                biopsy is conventionally taken.
+                Quantitative MRI features combined with simulated tumour&ndash;immune dynamics to
+                predict time to relapse, and to find which biopsy locations carry predictive
+                information. In <em>npj Systems Biology and Applications</em> (2025): macrophage
+                density at the tumour edge mattered far more than the conventional biopsy site.
               </p>
               <ul class="taglist">
                 <li><a class="tag" href="https://doi.org/10.1038/s41540-024-00478-7" target="_blank" rel="noopener">DOI 10.1038/s41540-024-00478-7</a></li>
@@ -169,9 +167,9 @@
               <h3>Hybrid mechanistic + learned models</h3>
               <p>
                 Where the biology is understood, write the mechanism down; where it is not, learn it.
-                I combine agent-based and reaction&ndash;diffusion models with statistical learning, then
-                use Bayesian inference and surrogate modelling to solve the inverse problems &mdash;
-                recovering parameters that are not directly observable from data that is sparse and noisy.
+                Agent-based and reaction&ndash;diffusion models combined with statistical learning, then
+                Bayesian inference and surrogate modelling to recover parameters that are not directly
+                observable from sparse, noisy data.
               </p>
               <ul class="taglist">
                 <li><span class="tag">Bayesian inference</span></li>
@@ -185,10 +183,9 @@
             <div>
               <h3>In-silico trials over virtual cohorts</h3>
               <p>
-                Generating cohorts of virtual patients from a mechanistic model, then &ldquo;measuring&rdquo;
-                them the way a clinic would &mdash; imaging volumes, proliferation indices, biopsies at
-                chosen locations. It lets you ask which measurement is worth taking before anyone
-                takes it, and it produces labelled data where real labels are scarce.
+                Virtual patients generated from a mechanistic model, then &ldquo;measured&rdquo; the
+                way a clinic would. It lets you ask which measurement is worth taking before anyone
+                takes it, and produces labelled data where real labels are scarce.
               </p>
             </div>
           </li>
@@ -227,11 +224,9 @@
             <div>
               <h3>An application for the lab's in-house biobank</h3>
               <p>
-                Research software I developed for the Perakakis Lab at Uniklinikum Dresden, where I
-                work: an application that digitises the group's in-house biobank data and makes
-                analysing it substantially easier. Getting from the lab's own records to an answer
-                used to be a manual job repeated for every new question &mdash; the application takes
-                that procedure on instead.
+                An application I built for the Perakakis Lab at Uniklinikum Dresden that digitises
+                the group's in-house biobank data and makes analysing it far easier. Getting from the
+                lab's records to an answer used to be manual work repeated for every new question.
               </p>
               <ul class="taglist">
                 <li><span class="tag">Research software</span></li>
@@ -245,10 +240,9 @@
             <div>
               <h3>Multi-provider agent orchestration</h3>
               <p>
-                A routing layer that lets each agent in a system pick its own model across
-                providers &mdash; OpenAI, Anthropic and the You.com Research API &mdash; behind a single
-                interface, with per-agent prompts, roles and fallbacks. Different tasks want different
-                brains, and provider lock-in is a liability rather than a simplification.
+                A routing layer where each agent picks its own model across providers &mdash; OpenAI,
+                Anthropic, You.com Research &mdash; behind one interface, with per-agent prompts and
+                fallbacks. Different tasks want different brains, and lock-in is a liability.
               </p>
               <ul class="taglist">
                 <li><span class="tag">OpenAI API</span></li>
@@ -263,10 +257,9 @@
             <div>
               <h3>Model Context Protocol tool servers</h3>
               <p>
-                Exposing domain-specific capabilities &mdash; literature scouting, peer-review critique,
-                funding search &mdash; as MCP tools over stdio, so any MCP-capable client can call them.
-                It turns a bespoke assistant into a set of composable tools that outlive the app they
-                were written for.
+                Domain capabilities &mdash; literature scouting, peer-review critique, funding search
+                &mdash; exposed as MCP tools over stdio, so any MCP-capable client can call them.
+                Composable tools that outlive the app they were written for.
               </p>
               <ul class="taglist">
                 <li><span class="tag">MCP</span></li>
@@ -280,10 +273,10 @@
             <div>
               <h3>Automated literature pipelines</h3>
               <p>
-                A scheduled pipeline that queries PubMed daily, filters to a defined scope, generates
-                structured summaries with an LLM &mdash; method, sample size, non-significant results
-                and limitations, not just the abstract's headline &mdash; translates them, and publishes
-                to a channel and a blog. Runs unattended on CI cron.
+                A scheduled pipeline that queries PubMed daily, filters to scope, and generates
+                structured summaries with an LLM &mdash; method, sample size, non-significant results,
+                limitations, not just the headline &mdash; then translates and publishes them. Runs
+                unattended on CI cron.
               </p>
               <ul class="taglist">
                 <li><span class="tag">PubMed / E-utilities</span></li>
@@ -297,10 +290,9 @@
             <div>
               <h3>Evidence-driven data ingestion</h3>
               <p>
-                Parsers that decide encoding, delimiter, header row, decimal convention and column
-                meaning from evidence inside the file rather than from configuration &mdash; because
-                real-world exports lie, and the column that looks like the amount usually is not.
-                The same discipline that keeps a clinical data dictionary honest.
+                Parsers that infer encoding, delimiter, header row, decimal convention and column
+                meaning from evidence in the file rather than configuration &mdash; because real-world
+                exports lie, and the column that looks like the amount usually is not.
               </p>
             </div>
           </li>
@@ -309,10 +301,9 @@
             <div>
               <h3>Reproducible, FAIR analysis workflows</h3>
               <p>
-                Version-controlled pipelines with pinned environments, deterministic seeds, and
-                provenance from raw extract to final figure &mdash; built so a colleague, a referee,
-                or I in eighteen months can re-run the whole thing and get the same numbers.
-                Large parameter sweeps run on HPC.
+                Version-controlled pipelines with pinned environments, deterministic seeds and
+                provenance from raw extract to final figure &mdash; so a colleague, a referee, or I in
+                eighteen months get the same numbers. Large sweeps run on HPC.
               </p>
               <ul class="taglist">
                 <li><span class="tag">Git</span></li>
